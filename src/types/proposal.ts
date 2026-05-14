@@ -24,6 +24,28 @@ export type ProposalSection =
         title: string;
         text: string;
       }[];
+    }
+  | {
+      type: "timeline";
+      eyebrow?: string;
+      title: string;
+      text?: string;
+      items: {
+        phase: string;
+        title: string;
+        text: string;
+      }[];
+    }
+  | {
+      type: "pricing";
+      eyebrow?: string;
+      title: string;
+      text?: string;
+      items: {
+        service: string;
+        description: string;
+        price: string;
+      }[];
     };
 
 export type Proposal = {
