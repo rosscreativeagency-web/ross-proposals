@@ -7,6 +7,8 @@ import { StatementSection } from "@/components/proposal/StatementSection";
 import { CardsSection } from "@/components/proposal/CardsSection";
 import { TimelineSection } from "@/components/proposal/TimelineSection";
 import { PricingSection } from "@/components/proposal/PricingSection";
+import { MediaSection } from "@/components/proposal/MediaSection";
+import { CTASection } from "@/components/proposal/CTASection";
 
 type PageProps = {
   params: Promise<{
@@ -59,6 +61,14 @@ export default async function ProposalPage({ params }: PageProps) {
 
         if (section.type === "pricing") {
           return <PricingSection key={index} {...section} />;
+        }
+
+        if (section.type === "media") {
+          return <MediaSection key={index} {...section} />;
+        }
+
+        if (section.type === "cta") {
+          return <CTASection key={index} {...section} />;
         }
 
         return null;

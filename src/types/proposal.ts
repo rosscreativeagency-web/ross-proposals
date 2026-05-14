@@ -46,6 +46,27 @@ export type ProposalSection =
         description: string;
         price: string;
       }[];
+    }
+  | {
+      type: "media";
+      eyebrow?: string;
+      title: string;
+      text?: string;
+      caption?: string;
+      images: {
+        src: string;
+        alt: string;
+      }[];
+    }
+  | {
+      type: "cta";
+      eyebrow?: string;
+      title: string;
+      description: string;
+      button?: {
+        label: string;
+        href: string;
+      };
     };
 
 export type Proposal = {
