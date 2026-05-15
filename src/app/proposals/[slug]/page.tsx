@@ -9,6 +9,7 @@ import { TimelineSection } from "@/components/proposal/TimelineSection";
 import { PricingSection } from "@/components/proposal/PricingSection";
 import { MediaSection } from "@/components/proposal/MediaSection";
 import { CTASection } from "@/components/proposal/CTASection";
+import { SPMProposalExperience } from "@/components/proposal/SPMProposalExperience";
 
 type PageProps = {
   params: Promise<{
@@ -22,6 +23,10 @@ export default async function ProposalPage({ params }: PageProps) {
 
   if (!proposal) {
     notFound();
+  }
+
+  if (slug === "spm") {
+    return <SPMProposalExperience proposal={proposal} />;
   }
 
   return (
