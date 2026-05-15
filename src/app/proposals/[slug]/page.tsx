@@ -25,7 +25,7 @@ export default async function ProposalPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[#f7f4ef] text-black">
+    <main className="min-h-screen bg-[#f3ede2] text-black">
       {proposal.sections.map((section, index) => {
         if (section.type === "hero") {
           return <ProposalHero key={index} {...section} />;
